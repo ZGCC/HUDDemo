@@ -55,6 +55,9 @@
     // Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
     
     DispatchMainThread(^{
+        
+        [MBProgressHUD hideAllHUDsForView:[UIApplication sharedApplication].keyWindow.rootViewController.view animated:YES];
+        
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow.rootViewController.view animated:YES];
         hud.userInteractionEnabled = NO;
         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
